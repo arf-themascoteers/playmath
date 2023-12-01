@@ -1,16 +1,21 @@
-# This is a sample Python script.
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+x  = np.random.rand(3, 5)
+for i in x:
+    plt.plot(i)
+
+plt.show()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+common_variance = 1.0
+mean = np.zeros(5)
+covariance_matrix = common_variance * np.eye(5)
+random_array_isotropic = np.random.multivariate_normal(mean, covariance_matrix, size=3)
+print(random_array_isotropic)
 
+for i in random_array_isotropic:
+    plt.plot(i)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+plt.show()
+#
